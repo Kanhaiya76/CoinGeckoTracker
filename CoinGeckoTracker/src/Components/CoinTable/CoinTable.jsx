@@ -1,26 +1,33 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState } from "react";
+import { useState,useContext } from "react";
+import { CurrencyContext } from '../../Context/CurrencyContext';
 import { fetchCoinData } from '../../Services/fetchCoinData';
+
+
 
 
 function CoinTable(){
 
-  
+   const {currency}= useContext(CurrencyContext)
+
+
+
 
     const [page,setPage] = useState(1);
 
     const {data,isLoading,isError,error } = useQuery({
-        queryKey: ['coins',page],
+        queryKey: ['coins',page,currency],
         queryFn: () =>
-          fetchCoinData({page,currency:'usd'}),
-       
+        fetchCoinData({page,currency}),
+    
     //    retry:2,
     //    retryDelay:1000,
-       cacheTime:1000*60*2,
+    cacheTime:1000*60*2,  //this will cache data for a time and make api call in parallel;
+    staleTime:1000*60*2   //(how long your data to be fresh) if your data is fresh then it will not make an api call;
 
-       
+    
     })  
-          
+        
 
 
     // useEffect(()=>{
@@ -109,8 +116,8 @@ if(isError){
         </button>
 
     <button
-     onClick={()=>setPage(page+1)} 
-     className= 'btn btn-secondary btn-wide text-white text-2xl'>
+    onClick={()=>setPage(page+1)} 
+    className= 'btn btn-secondary btn-wide text-white text-2xl'>
         Next
         </button>
 </div>

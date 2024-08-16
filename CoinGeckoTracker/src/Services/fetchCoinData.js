@@ -1,7 +1,7 @@
 
 import axiosInstance from '../Helpers/axiosInstance';
 
-export async function fetchCoinData({page=1,currency='usd'}) { // default currency=usd; and default page is 1;
+export async function fetchCoinData({page=1,currency}) { // default currency=usd; and default page is 1;
 
     const per_page=10;
     
