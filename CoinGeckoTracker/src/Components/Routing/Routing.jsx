@@ -10,7 +10,7 @@ function Routing(){
             <Route path="/" element={<MainLayout/>} >   
             <Route index element={<Home/>}  />                 {/*react router dom gives a prop called index like initial routes path="/"->index, path="/" also works but it may be confusing with  entry point-> mainlayout with page components */}
 
-            <Route path="/details/:coinId" element={<CoinDetailsPage/>} />
+            <Route path="/details/:coinId" element={<CoinDetailsPage/>} />  {/* : tells us this is not a static part of url it is dynamic part of url  and with the help of usearam we can fetch the exact key that you mention along with the colon */}
 
             </Route>
         </Routes>

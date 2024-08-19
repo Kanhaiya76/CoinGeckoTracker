@@ -13,3 +13,6 @@ import Navbar from "../Components/Navbar/Navbar";
  }
 
  export default MainLayout
+
+
+ {/* outlet is kind of placeholder but layout is like templete */}
