@@ -1,14 +1,14 @@
 import { create } from "zustand";
 
 
-const store = create((set)=>({
+const currencyStore = create((set)=>({
     currency:'usd',
-    setCurrency:(newCurrency)=>set((state)=>{
+    setcurrency:(newcurrency)=>set((state)=>{
         return{
             ...state,
-            currency:newCurrency
+            currency:newcurrency
         }
     })
 }))
 
-export default store;
+export default currencyStore;
