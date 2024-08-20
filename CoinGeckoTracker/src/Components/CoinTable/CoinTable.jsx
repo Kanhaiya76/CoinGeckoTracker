@@ -4,6 +4,7 @@ import { useState,useContext } from "react";
 import currencyStore from '../../State/Store'
 import { fetchCoinData } from '../../Services/fetchCoinData';
 import { useNavigate } from 'react-router-dom';
+import PageLoader from '../../PageLoader/PageLoader';
 
 
 
@@ -39,6 +40,9 @@ navigate(`/details/${id}`)
     //     console.log(data)
     // },[data])
 
+    if(isLoading){
+        return <PageLoader/>
+    }
 
 if(isError){
     return <div>Error:{error.message}</div>
@@ -70,7 +74,7 @@ if(isError){
 </div>
 
 <div className='flex flex-col w-[80vw] mx-auto' >
-    {isLoading && <div>Loading...</div>}
+    
 { data && data.map((coin)=> {
     
 

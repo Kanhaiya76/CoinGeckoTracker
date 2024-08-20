@@ -5,6 +5,7 @@ import currencyStore from "../State/Store";
 // import { useEffect } from "react";
 
 import parse from 'html-react-parser';
+import PageLoader from "../PageLoader/PageLoader";
 
 function CoinDetailsPage(){
 
@@ -24,7 +25,7 @@ function CoinDetailsPage(){
     // },[coin])
 
     if(isLoading){
-        return <div>Loading...</div>
+        return <PageLoader/>
     }
     if(isError){
         return <div>Error: something went wrong</div>
