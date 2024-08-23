@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState,useContext } from "react";
+import { useState } from "react";
 // import { CurrencyContext } from '../../Context/CurrencyContext';
 import currencyStore from '../../State/Store'
 import { fetchCoinData } from '../../Services/fetchCoinData';

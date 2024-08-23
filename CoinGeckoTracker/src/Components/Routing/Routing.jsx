@@ -5,13 +5,15 @@ import MainLayout from '../../Pages/Layout';
 import { lazy, Suspense } from 'react';
 import PageLoader from '../../PageLoader/PageLoader'
 
+
 const Home = lazy(()=> import('../../Pages/Home'))
 const CoinDetailsPage=lazy(()=> import('../../Pages/CoinDetailsPage'));
 
 
 function Routing(){
     return (
-        <Routes>
+      
+         <Routes>
             <Route path="/" element={<MainLayout/>} >   
             <Route index element={
                 
@@ -32,6 +34,7 @@ function Routing(){
 
             </Route>
         </Routes>
+       
     )
 }
 

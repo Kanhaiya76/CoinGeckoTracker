@@ -5,6 +5,7 @@ import currencyStore from "../State/Store";
 // import { useEffect } from "react";
 
 import parse from 'html-react-parser';
+import CoinInfoContainer from "../Components/CoinInfo/CoinInfoContainer";
 import PageLoader from "../PageLoader/PageLoader";
 
 function CoinDetailsPage(){
@@ -79,7 +80,8 @@ className="md:w-1/3 w-full flex flex-col items-center mt-6 md:mt-0 border-r-2 bo
 </div>
 
 <div className="md:w-2/3 w-full p-6">
-    Coin Information
+    
+    <CoinInfoContainer coinId={coinId}  />
 </div>
 
       </div>

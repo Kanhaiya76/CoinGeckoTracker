@@ -9,7 +9,9 @@ export async function fetchCoinData({page=1,currency}) { // default currency=usd
     try{
         const response = await axiosInstance.get(`/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${per_page}&page=${page}`);
 console.log(response.data)
+
 return response.data;
+
     }
     catch(error)
     {
